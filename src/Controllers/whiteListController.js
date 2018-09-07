@@ -21,12 +21,23 @@ let whiteLister = () => {
       return res.data;
     })
     .catch(err => {
-      console.log(err);
+      let errorResponse = {
+        data: "error",
+        status: err.status
+      };
+      return errorResponse;
     });
 };
 
 whiteListController.post = async (req, res) => {
   let data = await whiteLister();
+  if (data.data == "error") {
+    res.send({
+      data
+    });
+  } else {
+    res.send(data);
+  }
 };
 
 export default whiteListController;

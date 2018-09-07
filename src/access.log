@@ -35,3 +35,8 @@
 ::1 - - [05/Sep/2018:09:52:47 +0000] "POST /api/call HTTP/1.1" - - "-" "PostmanRuntime/7.2.0"
 ::1 - - [05/Sep/2018:09:57:15 +0000] "POST /api/call HTTP/1.1" - - "-" "PostmanRuntime/7.2.0"
 ::1 - - [05/Sep/2018:10:02:21 +0000] "POST /api/call HTTP/1.1" 200 538 "-" "PostmanRuntime/7.2.0"
+::1 - - [05/Sep/2018:13:29:03 +0000] "POST /api/sms HTTP/1.1" - - "-" "PostmanRuntime/7.2.0"
+::1 - - [07/Sep/2018:06:57:04 +0000] "POST /api/sms HTTP/1.1" - - "-" "PostmanRuntime/7.2.0"
+::1 - - [07/Sep/2018:07:01:12 +0000] "POST /api/sms HTTP/1.1" - - "-" "PostmanRuntime/7.2.0"
+::1 - - [07/Sep/2018:11:39:35 +0000] "POST /api/sms HTTP/1.1" - - "-" "PostmanRuntime/7.2.0"
+::1 - - [07/Sep/2018:11:48:27 +0000] "POST /api/sms HTTP/1.1" 200 42 "-" "PostmanRuntime/7.2.0"
