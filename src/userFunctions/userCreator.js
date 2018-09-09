@@ -28,8 +28,20 @@ const createUser = async (username, mobilenumber, otp) => {
       }
     });
 };
+const verifyOtp = async (mobilenumber, otp) => {
+  return knex("otp_verification")
+    .where("mobilenumber", mobilenumber)
+    .select("otp")
+    .then(res => {
+      return res[0].otp;
+    })
+    .catch(err => {
+      return "error";
+    });
+};
 
 const userCreator = {
+  verifyOtp,
   createUser
 };
 export default userCreator;
