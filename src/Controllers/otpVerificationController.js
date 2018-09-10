@@ -2,6 +2,7 @@ import userCreator from "../userFunctions/userCreator";
 let otpVerificationController = {};
 
 otpVerificationController.post = async (req, res) => {
+  console.log(req.body);
   let dataFromDb = await userCreator.verifyOtp(
     req.body.mobilenumber,
     req.body.otp

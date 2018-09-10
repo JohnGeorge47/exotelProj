@@ -2,10 +2,9 @@ let smsController = {};
 import axios from "axios";
 import FormData from "form-data";
 import userCreator from "../userFunctions/userCreator";
-let otp = Math.floor(1000 + Math.random() * 9000);
 let body =
   "From=08030474229&To=09422919865&Body=This is a test message being sent using Exotel with a (hi) and (3455). If this is being abused, report to 0808891988!";
-let exotelSms = toBeSent => {
+let exotelSms = (toBeSent, otp) => {
   let params = {
     From: "08030474229",
     To: "09422919865",
@@ -25,13 +24,14 @@ let exotelSms = toBeSent => {
     });
 };
 smsController.post = async (req, res) => {
+  let otp = Math.floor(1000 + Math.random(otp) * 9000);
   let dbInsertion = await userCreator.createUser(
     req.body.username,
     req.body.mobilenumber,
     otp
   );
   if (dbInsertion === "success") {
-    let smsInfo = await exotelSms(req.body.mobilenumber);
+    let smsInfo = await exotelSms(req.body.mobilenumber, otp);
 
     if (smsInfo.status == 200) {
       res.send({
